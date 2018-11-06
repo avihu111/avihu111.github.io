@@ -3,68 +3,62 @@ layout: post
 title: Tax optimisation as an adversarial game
 ---
 
-I came across a new adversarial setting (at least new to me...) while getting curious about how to apply AI/ML to complete tax law and how to regulate tax optimisation (aka avoidance in my mind, see [this post - TODO](?)).
+I came across a new adversarial setting (at least new to me...) while getting curious about how to apply AI/ML to complete tax law and how to regulate tax optimisation (aka avoidance in my mind, sigh).
 
 Some background:
 
 > NZ uses a General Anti-Avoidance Rule (GAAR). In practice this means judiciaries end up making the law. Aka, there doesnt exist a set of well-specified laws, so judges must interpret the GAAR (expensive calls to the oracle). The rulings are then used as precedent for the future.
 
-Two parts.
+Ok, so this post focuses on two ideas.
 
 <side>but if we could classify all types of avoidance then tax law would be complete??? kinda? ...</side>
 
 - Completing tax law. (a formal set of rules)
 - <a href="#classifying-tax-avoidance">Classifying avoidance</a>. (precedent and judges interpretation)
 
-# Completing tax law
+## Completing tax law
 
-Current tax law is incomplete, we have an incomplete approximation of some ideal, complete body of tax laws. We use queries to judiciaries to ...
+Current tax law is incomplete, we have an incomplete approximation of some ideal, complete body of tax laws. We use queries to judiciaries to complete the law.
 
-## An adversary
+### An adversary
 
-Imagine a game between IRD and a taxpayer (from the perspective of IRD)  
+Imagine a game between [IRD](https://www.ird.govt.nz/) and a taxpayer (from the perspective of IRD)  
 
-<side>What about retrospective application of the law? Need to investigate</side>
 
-1. You reveal your move (write and pass some tax legislation).
-2. Your adversary (a taxpayer) organises its finances to minimise tax paid (legally or not, that is a question for another day, tomorrow).
-3. The loss is revealed to the adversary (they avoided $x$ dollars of tax). You recieve no loss unless you choose to query an expensive oracle (judges/court) to check whether your adversary has made a legal move.
-
-(_The loss should really the sum of avoided tax over all iterations? Or not? What difference does this make? Cumulative versus absolute versus differential?_)
-
-What makes this setting hard?
-- __Information asymmetry__. The adversary always gets access to the current loss (they know how much tax they avoided -- at least with respect to their moves, kinda, the multi-agent setting complicates things). While you don't get any info about the loss unless you query an expensive oracle (judges).
-- __Computation asymmetry__. The adversary needs to find a single strategy to minimise tax (that is also legal). You need to find and subvert all potential strategies to avoid tax.
-- __Memory asymmetry__. In the multiplayer setting (many adversaries), it is easy(er) for each adversary to model and track changes in tax law (maybe they even collaborate...). But it is hard(er) for you to model and track changes to thousands, or more, adversaries (changes in a corporations finances my be indicative of avoidance).
 
 <side>Huh, a property of the minima (wrt to IRDs actions) would be that dLoss/dAdversary would also = 0. It doesnt matter what the adversary does, our loss remains the same, tax cant be avoided (although maybe they could pay more than necessary). Is that because it is a zero-sum game?</side>
 
-## Adversarial examples
+1. You reveal your move (write and pass some tax legislation).
+2. Your adversary (a taxpayer) organises its finances to minimise tax paid (legally or not, that is a question for another day. Tomorrow).
+3. The loss is revealed to the adversary (they avoided $x$ dollars of tax). You recieve the aggregated loss over all taxpayers (you can choose to query an expensive oracle -- judges/court -- to check whether your adversary has made a legal move).
 
-Adversarial examples are typically framed as black box problems (at least as far as I have seen), but what if you know that your adversary is going to be given your current model? How would you design your model given that information? Design a model so that it is stable under an informed adversarial attack. TODO need an examle of an application of this.
 
-<side>Robustness to adversarial pertubations during training?!?</side>
+What makes this setting hard?
+- __Information asymmetry__. The adversary always gets access to the current loss (they know how much tax they avoided -- at least with respect to their moves). While you only get access to the aggregated loss. But you can get info about specific taxpayers if you query an expensive oracle (audits/jidiciaries).
+- __Computation asymmetry__. The adversary needs to find a single strategy to minimise tax (that is also legal). You need to find and subvert all potential strategies to avoid paying tax.
+- __Memory asymmetry__. In the multiplayer setting (many adversaries), it is easy(er) for each adversary to model and track changes in tax law (maybe they even collaborate...). But it is hard(er) for you to model and track changes to thousands, or more, adversaries (changes in a corporations finances my be indicative of avoidance).
+
+### Related: Adversarial examples
+
+Adversarial examples are typically framed as black box problems (at least as far as I have seen), but what if you know that your adversary is going to be given your current model? How would you design your model given that information? Design a model so that it is stable under an informed adversarial attack.
+
 There is a target function (implicitly known by judges and the high court), which captures tax avoidance. We are trying to approximate that implicit knowledge with few samples. But, as we learn our approximation (the law -- no? and yes!?), our adversaries (taxpayers) adapt their strategies. So, while learning to approximate the target function we want to minimise taxpayers ability to game our approximation.
-<side>dL/dadv = 0. Dont want taxpayers to be able to change outcomes!?</side>
-Note: We may be learning this target function for a while due to changes in the environment (which we need to adapt to) ...?
 
-***
+## Classifying tax avoidance
 
-Extensions
-* What if we cannot accurately model the true loss function (because of its expense and complexity, small numbers of samples compared to the complexity of the fn to be learned). It would be impossible to achieve zero loss, so how should we proceed?
-* want to minimise cumulative loss, so we should learn to adapt quickly to our adversaries new strategies, or even predict them before they occur.
+Tax avoidance is defined as (in my own words); when a law is used in a way that was not intended.
 
-# Classifying tax avoidance
+<!-- set of actions that are legal, but when viewed from a 'global' perspective, their only purpose is to avoid tax. -->
 
-Defined as; set of actions that are legal, but when viewed from a global perspective, their only (\*) purpose is to avoid tax.
+The more formal version is:
 
-## Credit assignment
+### Credit assignment
 
 So if we have a set of loss function that capture the tax payers goals, ... and tax minimisation.
 
 Can we assign credit to certain actions? WANT: this (set of) action(s) minimised tax paid, and did little else. (in fact, it made the company have a more complex structure and harder to run everyday.)
 
-# Related work
+## Related work
 
 <side>TODO Need to investigate other work using these asymmetries. Also what examples are there of problems that share these asymmetries?</side>
 Aside from the asymmetries, this setting is similar to;
@@ -139,6 +133,9 @@ Questions raised;
 * How much harder is it to design un-gameable systems than to game that system?
 * How would you even prove that a strategy is un-gameable?
 * Is there a measure of gameability? The ability to __easily__ find hacks/strategies?
+<side>What about retrospective application of the law? Need to investigate</side>
+
+
 
 Legal questions
 

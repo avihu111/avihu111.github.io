@@ -1,12 +1,14 @@
 ---
 layout: post
-title: Real time RL
+title: Real time bandits
 ---
 
-Imagine you want to make a twitter bot that is rewarded by likes (or more likely, to write papers that are rewarded by many citations). This is reinforcement learning as we have a non-differentiable incentive. But, there is some extra structure. Unlike the typical (markov sequence) setting, where __the__ reward is recieved after $n$ actions (for example at the completion of a game of Go). In this setting, we are told which action is responsible for the reward. The tweet that was liked, the paper that was cited (thus we don't need to assign credit to actions). But we have only received a partial view of the reward. Rather than revealing the true reward of your action, its expected return in the future, we only have access to the rewards recieved so far.
+Imagine you want to make a twitter bot that is rewarded by likes (or more likely, to write papers that are rewarded by many citations). This is reinforcement learning as we have a non-differentiable incentive. But, there is extra structure.
+
+Unlike the typical setting, where the reward is recieved after $n$ actions (for example at the completion of a game of Go). In this setting, we are told which action is responsible for the reward. The tweet that was liked, the paper that was cited (thus we don't need to assign credit to actions). But we have only received a partial view of the reward. Rather than revealing the true reward of your action, its expected cumulative reward in the future, we only have access to the rewards recieved so far.
 
 > (In contrast to pong) If I receive a reward of 0.7, because I won 7 out of 10 games of pong using policy $\pi$, then in the future I would expect to continue to receive a reward roughly equal 0.7 unless something changes (such as the opponent).
-In this setting, receiving a reward of 0.7 at time step $t$ is not indicative of future rewards as your tweet/paper might be 'discovered' at some future time, $T$, and massively liked/cited.
+In this setting, receiving a reward of 0.7 at time step $t$ is not indicative of future rewards as your tweet/paper might go 'viral' at some future time, $T$.
 
 ## A slow oracle
 
@@ -19,16 +21,16 @@ How could this oracle be structured? Some constraints that might be interesting;
 - the oracle has some finite computational power and no memory and is searching through the past for useful actions. When it finds good actions it rewards them.
 - the oracle has a bias towards recent actions (twitter and academia both seem to share this)
 - the rewards given are monotonic (in the case of likes and citiations, we could probably assume that, although it isnt quite true)
-- as time tends to infinity, the reward given by the oracle converges to a finite value, $R^{\infty}$.
+- as time tends to infinity, the reward given by the oracle converges to a finite value.
 
 ## Formal setting
 
 <side>huh, there are no inputs. No observations. This doesn't seem important (?).</side>
-At each time step, $t \in \mathbb Z^+$, you take an action $a^t \in A$ an recieve a reward $r^t \in \mathbb R^t$. The goal is to learn a poilcy $\pi$ that receives past actions and rewards that maximises $R^{\infty}$.
+At each time step, $t \in \mathbb Z^+$, you take an action $a^t \in A$ an recieve a reward $r^t \in \mathbb R^t$ (the size of the reward vector changes with $t$). The goal is to learn a poilcy $\pi$ that receives past actions and rewards that maximises $R^{\infty}$.
 
 $$
-a^t = \pi(a^{t-1:0}, r^{t-1:0}) \\
-R^{\infty} = \sum_{i=0}^{\infty} \parallel r^i \parallel \\
+a^{t+1} = \pi(a^{t:0}, r^{t:0}) \\
+R^{\infty} = \mathop{\mathbb E}_{s_t \sim p(\cdot \mid a^{t:0})} \parallel r^i(s_t) \parallel \\
 $$
 
 <side>Does thinking about rewards like this help in the markov sequence setting? Where we only get to observe the sum across columns, $\sum_{i=0}^t \textbf{R}^t_i$. $\textbf{Q:}$ How much faster can learning occur when we have access to this information?</side>

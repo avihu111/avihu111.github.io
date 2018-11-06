@@ -82,6 +82,7 @@ $$
   decompose("starry-night");
   decompose("albertina");
 </script>
+(_code for generating images is in [tfjs](https://js.tensorflow.org/) (see source). but is kinda buggy_)
 
 
 ### Structured latent space
@@ -89,21 +90,16 @@ $$
 <side>allowing you to have distinct priors on each one?</side>
 Now our hidden space is structured. Earlier skips carry high frequency content and later skips carry low frequency content.
 
-<img src="../images/freq-net.png" width="250" height="250" class="center-image">>
+<img src="../images/freq-net.png" width="250" height="250" class="center-image">
 
 ### 'High' level content
 
-What do we mean when we talk about high level content? Familiar definitions include invariance to transforms, or generality, or absractness. But this can also be viewed as low frequency content (invariant to averaging under time shifts ??).
+What do we mean when we talk about high level content? Familiar definitions include invariance to transforms, or generality, or absractness. But another valid interpretation seems to be: low frequency content. Thus we hope to capture the high level content, by forcing the information through low pass filters.
 
-Thus we hope to capture the high level content, a function of its parts, ...
+__TODO.__
 
-### Wavelet decomposition
-
-Relationship to a wavelet decomposition...
-
-## Results
-
-TODO ... need to get around to this... wont be extensive...
+- Explore the connection to a recursive wavelet decomposition
+- Actually test at scale
 
 ***
 

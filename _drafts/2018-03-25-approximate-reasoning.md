@@ -3,7 +3,7 @@ layout: post
 title: Approximate reasoning with incomplete models
 ---
 
-In some cases we might want to trade-off accuracy for other types of complexity; latency, memory, time, ... What does this trade cost in (approximate) reasoning systems?
+When reasoning, in some cases we might want to trade-off accuracy for other resources; latency, memory, time, ... What does this trade cost in (approximate) reasoning systems?
 
 <side>These questions were inspired by how people tend to reason inconsistently, and I wondered what advantages our inconsistency might give</side>
 
