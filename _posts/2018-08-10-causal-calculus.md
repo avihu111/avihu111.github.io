@@ -4,8 +4,7 @@ title: Causal calculus
 ---
 
 I recently read Judea's [book](https://www.goodreads.com/book/show/36204378-the-book-of-why
-) on Causal Inference (you should to). I noticed an intriguing generalisation of a couple of the formulas.
-
+) on Causal Inference (you should to). I noticed another interpretation of a couple of the formulas.
 
 ## Causal inference
 
