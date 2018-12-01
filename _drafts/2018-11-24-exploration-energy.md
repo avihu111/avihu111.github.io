@@ -11,7 +11,7 @@ At some point we will want to apply AI to economics and healthcare. And while un
 
 > Want to do experiments on particle physics. The explorer could; organise and convince tens of countries to support the construct a hadron collider the size of a country. Or we could spend those resources on searching for a cheaper experiment, like the wakefield accelerator.
 
-Ok, this has an interesting property. Multiple ways to learn the same thing.
+Ok, this has an interesting property. Multiple ways to learn the same thing. We want to pick the cheapest...
 
 > What is the effect of the quality of local libraries on the national economy? To answer this we could: do an experiment on ~20 countries, varying the quality of the local libraries, controlling for potential confounders like, national policy, culture, ... and measure the effect over 50 years. Or, we could approximate that experiment with ...? A set of local experiments, stimulus-response, measure and correct for confounders and correlates, ...?
 
@@ -32,7 +32,7 @@ Have a set of options. Each option has an associated energy cost (could simply b
   - When does $\tau(s_t, [a_1, a_2, a_3]) \neq \tau(s_t, [a_1, a_3, a_2])$?
   - How hard is this to learn as $a_n$ increases?
 - Write $\Delta \tau(s_t, a_i) \equiv \tau(s_t, a_i)- s_t$.
-  - When does $\Delta \tau(s_t, a_n) \neq \tau(s_t, [a_1, \dots, a_n]) - \tau(s_t, [a_1, \dots, a_{n-1}])$?
+  - When does $\Delta \tau(s_t, a_n) \neq \tau(s_t, [a_i, \dots, a_{i+n}]) - \tau(s_t, [a_{j+n}, \dots, a_{n-1}])$?
   - How hard is this to learn as $a_n$ increases?
 
 Where $a_i\in O$ are options (not just actions).

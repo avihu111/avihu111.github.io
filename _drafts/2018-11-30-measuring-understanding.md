@@ -15,11 +15,20 @@ title: Understanding
 But, generation is neither necessary nor sufficient.
 
 - Not necessary. We "understand" that we evloved from bacteria despite the fact that we cannot generate this phenomena.
-- Not sufficient. A NN can generate its training data, but it does not understand its training data. (recovering a minimal representation, compression?)
+- Not sufficient. A NN could just memory its training data, but it does not understand its training data... (recovering a minimal representation, compression?)
 
 
-There are different levels of understanding.
+There are different levels of explanation?
 
+## Understanding as reachability
+
+Understanding seems to involve a few ideas.
+
+If you understand X, you can;
+- explain it.
+- use it flexibly to do Y.
+
+Related to reachability and connectedness.
 
 ## Examples
 
