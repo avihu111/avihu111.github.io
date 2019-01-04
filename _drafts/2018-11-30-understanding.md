@@ -14,9 +14,8 @@ title: Understanding
 ***
 But, generation is neither necessary nor sufficient.
 
-- Not necessary. We "understand" that we evloved from bacteria despite the fact that we cannot generate this phenomena.
-- Not sufficient. A NN could just memory its training data, but it does not understand its training data... (recovering a minimal representation, compression?)
-
+- Not necessary. We "understand" that we evloved from bacteria despite the fact that we cannot generate this phenomena. (maybe we dont really understand...)
+- Not sufficient. A NN could just memorise its training data, but it does not understand its training data... (recovering a minimal representation, compression?)
 
 There are different levels of explanation?
 
@@ -86,3 +85,9 @@ Refresher. Prove something famous via induction.
 Related
 
 - necessary and sufficient causation
+
+
+What makes something true?
+- Spend X resources trying to find adversarial examples/counter examples (but not finding any)?!
+- Ability to predict/generate accurately
+- ?

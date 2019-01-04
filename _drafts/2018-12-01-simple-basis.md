@@ -14,7 +14,7 @@ $$
 | Description | y | f | x | $\epsilon$ | Loss |
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | PCA | None | Linear, Orthogonal | None | Additive, Gaussian, Stationary | $\parallel SV^Tx - y \parallel_2^2$ |
-| ICA | None | Linear | statistically independent | No noise | $H(p(Y=y)) - \sum_i H(p(Y_i=y_i))$ |
+| ICA | None | Linear | statistically independent, p(x) | No noise | $H(p(Y=y)) - \sum_i H(p(Y_i=y_i))$ |
 | FFT/wavelets | Sparse, complex | Linear, complex | None | No noise | ??? |
 | Compressed sensing | None | Linear, Approximately orthogonal | Sparse | Additive, Gaussian, Stationary | $\parallel Ax - y \parallel_2 + \parallel x \parallel_1$ |
 | 1-step graph propagation | None | Linear, Normalised rows | None | None | None |
@@ -31,7 +31,8 @@ What if
 - $X/Y$ is structured. A set of graphs, trees, groups...
 - low rank, symmetric, positive semi definite, block, ...?
 - noise can change, or be correlated with x?!
-- ?
+- uniformly distributed. the spaces came with measures as well.
+-
 
 
 What all of this is really about is how we can transform from one basis to another. Want better intuition here!
@@ -44,5 +45,5 @@ Are there any nonlinear examples that we can tractably analyse?
 <!-- What about a taxonomy of all the problems related to;
 - z* = argmax f(x) st y. LP, QP, ???. Wasserstein. Gumbel trick. ...!? (this would be a long list!?)
 - L = minmax f(x, y). Minimax games, xAy...
-- $\frac{dx}{dt} = g(x, t)$. ODEs, gradient descent, ...
+- $\frac{dx}{dt} = f(x, t)$. ODEs, gradient descent, ...
   -->

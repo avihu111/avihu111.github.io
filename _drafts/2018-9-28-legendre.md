@@ -13,6 +13,7 @@ https://arxiv.org/pdf/math-ph/0410052.pdf
 https://hal.inria.fr/hal-01055917v2/document
 
 Calculate the $y$ intercept of a function.
+
 $$
 \begin{align}
 y(x) &= mx + c \\

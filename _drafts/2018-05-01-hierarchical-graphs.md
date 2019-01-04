@@ -3,6 +3,10 @@ layout: post
 title: Hierarchical graphs
 ---
 
+<!--
+What about other types of graph. Hyper, ...!?
+ -->
+
 We say things like "the sun is hot because of the energy released by the fusion of hydrogen atoms". We could construct a graph of concepts and relations, linking `the sun` to `hot` via some `is` relation, and ...
 
 But `the sun`, `hydrogen atoms`, `energy`, ... are not basis concepts (and neither are `because`, `released`, `fusion`, ... basis relations), they are extremely complicated ideas built up by experience and reasoning.
