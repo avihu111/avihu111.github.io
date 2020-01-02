@@ -38,9 +38,9 @@ Imagine you are an agent in a 2d environment. But, rather than having access to 
 
 (we know $r_1 = r_2 + r_3$)
 
-So, how much smaller is the search space is we plan from $A$ and $B$?
+So, how much smaller is the search space when we plan from $A$ and $B$?
 
-- Planning from A or B: $\pi r_1^2$
+- Planning from A xor B: $\pi r_1^2$
 - Planning from A __and__ B: $\pi r_2^2 + \pi r_3^2$
 
 Reduction in search space
