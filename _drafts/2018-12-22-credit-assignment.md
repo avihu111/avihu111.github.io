@@ -8,3 +8,11 @@ title: Credit assignment
 - Alternative ways to assign credit!?
 - Why we need stochastic variables for discrete credit assignment.
 - !?
+
+If your fault.
+
+Legal.
+Nesessary and sufficient causation.
+
+
+Only want to assign credit to causes, not correlates?!

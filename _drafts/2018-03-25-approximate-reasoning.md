@@ -190,3 +190,10 @@ So, we would want to maximise this?
 $$
 \mathop{argmax}_{\theta} \mathcal C(D_{\theta})
 $$
+
+
+
+***
+
+When working with approximates.
+Multiple reasons leading to the same conclusion should increase the plasubility?

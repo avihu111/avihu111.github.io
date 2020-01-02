@@ -3,9 +3,9 @@ layout: post
 title: The complexity of exploration
 ---
 
-This setting is inspired by the problems faced in science, especially economics and medicine. There are some experiments that are not feasible, or legal, or would take extraordinary amounts of organisation and energy. For example, a randomised controlled trial of the unconditional benefit would require: more than twenty countries to participate, for some countries to  (and obviously there is no way of running is as a blinded experiment)
+This setting is inspired by the problems faced in science, especially economics and medicine. There are some experiments that are not feasible, or legal, or would take extraordinary amounts of organisation and energy. For example, a randomised controlled trial of the unconditional benefit would require: more than twenty countries to participate, for some countries to  (and obviously there is no way of running is as a blinded experiment).
 
-At some point we will want to apply AI to economics and healthcare. And while unsupervised learning is to pattern recognition, supervised learning is to predictive intelligence, reinforcement learning is to actionable intelligence. But this requires the AI to take actions in the real world. We will want AI to explore and do experiments! But... This has two problems. Safety, which is considered here. Want to build AI with a bias to simple cheap experiments.
+At some point we will want to apply statistics to economics and healthcare. And while unsupervised learning is to pattern recognition, supervised learning is to predictive intelligence, reinforcement learning is to actionable intelligence. We will want algorithms that explore and do experiments! But... This has two problems. Safety, which is considered here. Want to build AI with a bias to simple cheap experiments.
 
 ## Examples
 
