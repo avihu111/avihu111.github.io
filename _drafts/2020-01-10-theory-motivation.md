@@ -3,23 +3,13 @@ layout: post
 title: Motivating theory
 ---
 
+> What is theory, and why do we need it?
 
-> Why do we need to understand RL?
+A case study, theory for ML/DL/RL.
 
-<!-- Motivating a mastery of theory. -->
-
-Current state of RL.
-- A summary of the arxiv...
-- Benchmarking
-
-How can theory help tame this mess?
-How does this lead to studying MDPs?
-
+How can theory help clean the mess that is arxiv?
+How does this lead to studying MDPs and Bandits?
 What do we want? To organise, to explain, to compress, to ???.
-
-That isnt to say that theory is all good.
-Examples of bad theory. Unrealistic assumptions. Symbolics for the sake of symbols.
-
 
 ### Benchmarks
 
@@ -54,9 +44,8 @@ Just take a look at some recent papers...
 
 ### How does theory help?
 
-In RL there are a few well known theoretical results to build on! (unlike DL).
+In RL there are a few well known theoretical results to build on!
 Examples. Convergence of VI. TD. Optimality of ...
-
 
 ### Evaluating our models
 
@@ -76,26 +65,14 @@ How do we test this? [CoinRun](https://arxiv.org/pdf/1812.02341.pdf)
 https://bair.berkeley.edu/blog/2019/03/18/rl-generalization/
 
 
-\hypertarget{understanding-theoretical-reinforcement-learning}{%
-\subsection{Understanding Theoretical Reinforcement
-learning}\label{understanding-theoretical-reinforcement-learning}}
+### Understanding Reinforcement learning
 
 What are its goals. Its definitions. It methods?
 
-\begin{itemize}
-\tightlist
-\item
-  Optimality
-\item
-  Model based
-\item
-  Complexity
-\item
-  Abstraction
-\end{itemize}
-
-Recent work has bounded the error of representation learning for RL.
-\href{}{Abel et al.~2017}, \href{}{Abel et al.~2019}
+- Optimality
+- Model based
+- Complexity
+- Abstraction
 
 But. It is possible that this representation achieves no compression of
 the state space, making the statement rather vacuous. Further more, it
@@ -110,3 +87,8 @@ The bounds are typically for the worst case. But these bounds could be
 tighter if we exploited the structure tht exists in natural problems.
 The topology of the transition function; its, sparsity, low rankness,
 locality, The symmetries of the reward function. ??? (what about both?!)
+
+### Bad examples
+
+That isnt to say that theory is all good.
+Examples of bad theory. Unrealistic assumptions. Symbolics for the sake of symbols.

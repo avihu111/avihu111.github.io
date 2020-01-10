@@ -3,49 +3,53 @@ layout: post
 title: Representations in linear algebra
 ---
 
-Linear algebra and arrays combine to give us a powerful language/representation. Lets explore its power by using linear algebra to represent other interesting languages/systems/grammars/algebras...
-
-<!-- For example, logic/computation, dual numbers, holographic representations, ???
-Others? What about graphics, or ??, or -->
+Linear algebra and arrays combine to give us a powerful language. Let's explore the power of them represent interesting languages/systems/grammars/algebras...
 
 ## Embedded linear operators
 
 One of the cool things about linear algebra is that linear functions can be written as arrays. This representational duality between operator and operand is rather elegant.
 
+Related to Turing's duality of data and program. Where ...
+
 <!-- But are these more that just nice mathematical curiosities? Why is this useful or important? -->
 
-### Polynomials
-##### The differentiation operator
+## Polynomials
 
-If we consider $a \in \mathcal P$ (the space of polynomials). Where $a_i$ represents $a_i \cdot x^i$. Thus $[0, 5, 3, 0, 1, \dots]^T$ represents
+Consider the space of polynomial coefficients, $a \in  {\mathbb R}^{\infty}$. Where $a_i$ is the coefficient for $x^i$. Thus $a = [0, 5, 3, 0, 1, \dots]^T$ represents
 
 $$
 0\cdot x^0 + 5\cdot x^1 + 3\cdot x^2 + 0\cdot x^3 + 1\cdot x^4 \\
 = x^4 + 3\cdot x^2 + 5\cdot x
 $$
 
-So we can define a differentiation operator, $D$. This works because differentiation is a linear function!
-<side>Problem (we need infinite matrices for this to work out...)</side>
+
+##### The differentiation operator
+
+We can define a differentiation operator, $D$, as a matrix.
 
 $$
 \begin{align*}
-D &= \begin{bmatrix}
+\mathcal D &= \begin{bmatrix}
 0 & 1 & 0 & 0 & \dots \\
 0 & 0 & 2 & 0 &  \dots \\
 0 &0 & 0 & 3 & \dots \\
 \vdots & \vdots & \vdots & \vdots & \ddots \\
 \end{bmatrix} \\
-\frac{d}{dx} &= D
 \end{align*}
 $$
 
-each column is the derivative of a 'basis' function, which in this case is each $x^n$. Now, lets test it out.
+And we can 'do' differentiation vuia matrix multiplying $\frac{d}{dx}a = \mathcal D \cdot a$.
+<side>Problem (we need infinite matrices for this to work out...)</side>
+
+
+
+This all works out because differentiation is a linear function! Each column is the derivative of a 'basis' function, which in this case is each $x^n$. Now, lets test it out.
 
 $$
 \begin{align}
 y &= x^4 + 3\cdot x^2 + 5\cdot x \\
-&\rightarrow [0, 5, 3, 0, 1]^T \\
-\frac{d}{dx} (y) &= D \cdot y \\
+a &= [0, 5, 3, 0, 1]^T \\
+\frac{d}{dx} a &= \mathcal D \cdot a \\
 &= \begin{bmatrix}
 0 & 1 & 0 & 0 & 0 \\
 0 & 0 & 2 & 0 & 0 \\
@@ -56,40 +60,58 @@ y &= x^4 + 3\cdot x^2 + 5\cdot x \\
 \begin{bmatrix} 0 \\ 5 \\ 3 \\ 0 \\ 1
 \end{bmatrix} \\
 &= \begin{bmatrix} 5 \\ 2 \cdot 3 \\ 0 \\ 4 \cdot 1 \\ 0 \end{bmatrix} \\
-\frac{dy}{dx} &= 4\cdot x^3 + 6\cdot x + 5 \\
+\frac{d}{dx}a &= 4\cdot x^3 + 6\cdot x + 5 \\
 \end{align}
 $$
 
-- __Q__ Are there other functions that yield a nice representation of the derivative operator?
-- __Q__ What about multi-variable differentiation?
+<side>Homework: What is the derivative of a derivative, $D \cdot D$? Does it make sense?</side>
+Awesome.
 
-- Homework. What is the derivative of a derivative, $D \cdot D$? Does it make sense?
 
 #### Integral (of polynomials)
 
+What about integrals, they are linear operators. Let's write them in a similar manner??
+
 $$
 \begin{align}
-I &= \frac{1}{D^T} \\
+\mathcal I &= \begin{bmatrix}
+0 & 0 & 0 & 0 & 0 & \dots \\
+1 & 0 & 0 & 0 & 0 & \dots \\
+0 & \frac{1}{2} & 0 & 0 & 0 & \dots \\
+0 & 0 & \frac{1}{3} & 0 & 0 & \dots \\
+0 & 0 & 0 & \frac{1}{4} & 0 & \dots \\
+\vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+\end{bmatrix} \\
+\end{align}
+$$
+
+So, we can define an integral operator, $\mathcal I$, and apply it via matrix multiplication.
+
+$$
+\begin{align}
+y &= x^4 + 3\cdot x^2 + 5\cdot x \\
+a &= [0, 5, 3, 0, 1]^T \\
+\int a \; dx &= \mathcal I \cdot a \\
 &= \begin{bmatrix}
-0 & 0 & 0 & 0 & 0 \\
-1 & 0 & 0 & 0 & 0 \\
-0 & \frac{1}{2} & 0 & 0 & 0 \\
-0 & 0 & \frac{1}{3} & 0 & 0 \\
-0 & 0 & 0 & \frac{1}{4} & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 & 0 \\
+0 & \frac{1}{2} & 0 & 0 & 0 & 0 \\
+0 & 0 & \frac{1}{3} & 0 & 0 & 0 \\
+0 & 0 & 0 & \frac{1}{4} & 0 & 0 \\
+0 & 0 & 0 & 0 & \frac{1}{5} & 0 \\
 \end{bmatrix}
+\begin{bmatrix} 0 \\ 5 \\ 3 \\ 0 \\ 1 \\ 0
+\end{bmatrix} \\
+&= \begin{bmatrix} 0 \\ 0 \\ \frac{5}{2} \\ \frac{3}{3} \\ 0 \\ \frac{1}{5} \end{bmatrix} \\
+\int a \; dx &=  \frac{1}{5} x^5 + \frac{3}{3} x^3 + \frac{5}{2} x^2 + c\\
 \end{align}
 $$
 
-What about one that takes a sum over all values of $f(x)$?
-__I am confused. The area under the curve, at x!?!.__
+<side>Ok. So this doesnt quite with with the added constant, $c$.</side>
 
-$$
-\begin{align}
-\text{Integral}(f) &= \int f(x) dx \\
-&= \sum_i f(x_i) \\
-&=
-\end{align}
-$$
+***
+
+Intriguingly, we can relate the integration and differentiation operators via $\mathcal I = \frac{1}{\mathcal D^T}$.  Hmph. Should have $\mathcal I \mathcal D = I$?!? What have I done wrong?
 
 ### Bilinear operations
 

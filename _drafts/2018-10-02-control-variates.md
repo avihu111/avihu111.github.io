@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sampling for RL: Importance and control variates
+title: Sampling for RL. Importance sampling and control variates
 ---
 
 Estimating the mean of a function. Not trivial?
