@@ -5,6 +5,8 @@ title: Fixed point compression
 
 This is an attempt to extend compressed sensing to more stuctured priors. A combinaton of compressed sensing, graph signal processing and dynamical systems.
 
+<!-- related https://onlinelibrary.wiley.com/doi/book/10.1002/0471732672 ??? -->
+
 ## Setting/Motivation.
 
 Imagine we have a model of the dynamics of a system, $f_{dynamics}(\theta): V \to V$, and we can project a signal into our system $f_{x\to v}: X \to V$.
