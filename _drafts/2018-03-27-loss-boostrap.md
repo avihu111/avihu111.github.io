@@ -5,10 +5,11 @@ title: Bootstrapping loss functions
 
 > The evolutionary challenge of making unsupervised learning solve the “right” problems is, therefore, to find a sequence of cost functions that will deterministically build circuits and behaviors according to prescribed developmental stages, so that in the end a relatively small amount of information suffices to produce the right behavior. [source](https://www.frontiersin.org/articles/10.3389/fncom.2016.00094/full)
 
-- Is it possible to bootsrap a loss function using itself?
-- Have can we recursively learn a loss function?
+This is about how we can compress a loss function (and the labels / supervision), and efficiently / accurately recover it.
+First we should start by looking at some existing loss fns, and characterise their intrinsic dimensionality?!
 
 We are given an incomplete loss function. Incomplete meaning;
+
 - it doesnt fully capture the true loss
 - it is inefficient?
 - it is built out of many independent heuristics.

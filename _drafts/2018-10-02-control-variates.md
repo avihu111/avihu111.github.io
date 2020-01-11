@@ -1,7 +1,20 @@
 ---
 layout: post
-title: Sampling for RL. Importance sampling and control variates
+title: Variance reduction for faster learning
 ---
+
+### How does variance effect the speed of learning?
+
+
+
+
+### How can we reduce variance?
+
+Importance sampling and control variates.
+
+
+
+
 
 Estimating the mean of a function. Not trivial?
 How to do efficiently?

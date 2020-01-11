@@ -72,3 +72,5 @@ __ TODO Adding depth versus adding width! What problem do they solve?__
 ### Notes
 
 This also reminds me of the Hierarchical Tucker decompsition. Start with a big wide tensor. Recursively split the wide net into two matrices. Not sure what do do with that...
+
+- [Splitting Steepest Descent for Growing Neural Architectures](https://arxiv.org/abs/1910.02366)

@@ -1,32 +1,7 @@
 ---
 layout: post
-title: Automatic math
+title: Automatic integration
 ---
-
-## Automatic proving
-
-...
-
-
-## Automatic analysis
-
-### Automatic differentiation
-
-
-Explain.
-
-
-### (Approximate) Automatic bounding
-
-$$
-\lim_{t\to\infty}\sum_t \gamma^t =  \frac{1}{1-\gamma} \\
-\parallel \langle u, v \rangle \parallel^2 \le \langle u, u \rangle \cdot \langle v, v \rangle
-$$
-
-If the algol recognises an instance of LHS then it should replace it with RHS.
-(does need a notion of which is 'simpler' as we are telling it which is better)
-
-Optimising to find tighter bounds. Searching through inequalities, like cauchy schwarz, to find relationswith less 'slip'.
 
 
 ### (approximate) Automatic integration
@@ -45,14 +20,3 @@ Integration problems.
 - Have distribution Q, want estimate of x under distribution P. Where there exists some relationship between $P$ and $Q$. e.g. $P = f(Q)$.
 - Space is to large to sum over. Use some combination of adaptive step sizes + dim reduction?!
 -
-
-## Automatic computational complexity
-
-
-
-***
-
-Also.
-- Automated inductive arguments / generalisations
-- Automated proofs via contradiction
-- ?
