@@ -345,3 +345,6 @@ Other
 - The duality between representations and functions. A (linear) function can be written as a matrix. __Q__ For what other classes of function can we find dual representations?
 - What alternatives are there to representing information that rival linear algebra? Other data structures, trees, graphs, !??
 - in some representations, matmul ends up capturing another operation in the original representation. other times, the arguments capture the operations.
+
+<!-- 
+- could talk about "Concrete models and empirical evaluations for the categorical compositional distributional model of meaning". -->

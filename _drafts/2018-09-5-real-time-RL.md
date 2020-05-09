@@ -3,29 +3,23 @@ layout: post
 title: Real time bandits
 ---
 
-Imagine you want to make a twitter bot that is rewarded by likes (or more likely, to write papers that are rewarded by many citations). This is reinforcement learning as we have a non-differentiable incentive. But, there is extra structure.
+Imagine you want to make a twitter bot that is rewarded by likes, it adapts it's tweets in attempt to maximise its rewards.
 
-Unlike the typical setting, where the reward is recieved after $n$ actions (for example at the completion of a game of Go). In this setting, we are told which action is responsible for the reward. The tweet that was liked, the paper that was cited (thus we don't need to assign credit to actions). But we have only received a partial view of the reward. Rather than revealing the true reward of your action, its expected cumulative reward in the future, we only have access to the rewards recieved so far.
+Unlike the typical episodic setting, where the return can be calculated after some fixed amount of time, or when the episode halts (for example at the completion of a game of Go). In this setting, there is no (efficient and unbiased) way to estimate the return. Despite this, is there a way to act 'rationally'?
 
-> (In contrast to pong) If I receive a reward of 0.7, because I won 7 out of 10 games of pong using policy $\pi$, then in the future I would expect to continue to receive a reward roughly equal 0.7 unless something changes (such as the opponent).
-In this setting, receiving a reward of 0.7 at time step $t$ is not indicative of future rewards as your tweet/paper might go 'viral' at some future time, $T$.
+## A resource bounded oracle
 
-## A slow oracle
+In this setting we can think of the oracle as one that has bounded resources.
+For example, it may have some finite computational power (and no memory). It searches through the past for useful actions. When it finds good actions it rewards them.
 
-We could think of this oracle as one that:
 
-> is testing/evaluating your action and gives you feedback based on its current (possibly imperfect) knowledge.
+<!-- > is testing/evaluating your action and gives you feedback based on its current (possibly imperfect) knowledge. -->
 
-How could this oracle be structured? Some constraints that might be interesting;
-
-- the oracle has some finite computational power and no memory and is searching through the past for useful actions. When it finds good actions it rewards them.
-- the oracle has a bias towards recent actions (twitter and academia both seem to share this)
-- the rewards given are monotonic (in the case of likes and citiations, we could probably assume that, although it isnt quite true)
-- as time tends to infinity, the reward given by the oracle converges to a finite value.
+<!-- - a bias towards recent actions (twitter and academia both seem to share this) -->
+<!-- - is given monotonic rewards (in the case of likes and citiations, we could probably assume that, although it isnt quite true). -->
 
 ## Formal setting
 
-<side>huh, there are no inputs. No observations. This doesn't seem important (?).</side>
 At each time step, $t \in \mathbb Z^+$, you take an action $a^t \in A$ an recieve a reward $r^t \in \mathbb R^t$ (the size of the reward vector changes with $t$). The goal is to learn a poilcy $\pi$ that receives past actions and rewards that maximises $R^{\infty}$.
 
 $$
@@ -59,6 +53,16 @@ So given a time step, how might the rewards be distributed over the past actions
 
 <side>Is there anything dangerous/pathological about doing this?</side>
 The velocity ($\Delta R$) and acceleration ($\Delta^2 R$) appear to be useful signals. A simple heurstic could be to maximise them in place of the true $R$.
+
+## Problem
+
+We dont get the return. So we cannot use X types of learning.
+Also. TD updates dont make sense. WHY?!?!
+
+If arbitrary things can happen in the future, the we have little hope of being able to learn much.
+What if we know the rewards are monotonic? Still doesnt help much...
+
+Without strong priors, this is a really hard problem!??!
 
 ## Learning
 
