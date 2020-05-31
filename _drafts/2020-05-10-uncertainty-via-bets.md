@@ -27,6 +27,26 @@ But it isnt actually deterministic?!
 
 Does interpreting these as probabilities lead to any pathologies?
 
+$$
+\mathop{\text{min}}_{\theta} \mathop{\mathbb E}_{P(x, t)} \ell(x, t, \theta) \\
+\mathop{\text{min}}_{\theta} \mathop{\mathbb E}_{D \sim \mathcal D} \sum_{(x, t) \sim D} \ell(x, t, \theta) \\
+$$
+
+### Bayes
+
+$$
+P(h| D) = \frac{P(D | h)P(h)}{\sum_H P(D| h) P(h)}
+$$
+
+Uncertainty over potential hypotheses.
+Given P(h|D), how do we convert that into an uncertainty estimate for a single $x$?
+
+$$
+P(x, y | D) = \sum_H P(x, y | h) P(h|D)
+$$
+
+When is this computable!?!?
+
 ### Confidence via bets
 
 Rather. We can ?? our confidence by betting on it.
