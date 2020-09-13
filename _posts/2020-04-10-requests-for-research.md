@@ -16,18 +16,6 @@ _(the number of stars reflects how open the problem is:, 1 star means little roo
 
 &#9734; __Atari-onomy__ Make a [taskonomy](http://taskonomy.stanford.edu/) of the [Atari](https://gym.openai.com/envs/#atari) games, showing how 'similar' each game is to others.
 
-<!-- __Who is the best critic?__ &#9734; &#9734; Which value fn approximation has the best inductive bias suited to learning value functions? A value function is the expected future return of a given state. $V(s_t) =\mathbb E\big[ \sum_{i=t}^T \gamma^{T-t+i} R(s_t) \big]$. We can approximate the value function with a parameterise function, but which one? [Relational neural networks](https://arxiv.org/abs/1706.01427), [decision trees](https://en.wikipedia.org/wiki/Decision_tree), [neural processes](https://arxiv.org/abs/1807.01622), ... . Learning value functions have a couple of issues, large class imbalance/rare events, online training,  distribution shift, ... . -->
-
 &#9734; &#9734; &#9734; __Learner discrimination__ Just by observing a player learn, can we identify the learning algorithm is it using to learn? For example, can we distinguish the learners in [OpenAI's baselines](https://github.com/openai/baselines/), PPO, AC2, AKTR, ...?
 
-<!-- __Unbiased online recurrent opptimisation__ &#9734; &#9734; Can we extent [UORO](https://arxiv.org/abs/1702.05043) to the RL setting and the continuous learning setting by combining it with an online version of [EWC](https://arxiv.org/abs/1612.00796)? -->
-
 &#9734; &#9734; __Meta learning from temporal decompositions__ [Meta-RL](https://arxiv.org/abs/1611.05763) trains a learner on the aggregated return over many episodes (a larger time scale). If we construct a temporal decomposition (moving averages at different time-scales) of rewards and aproximate them with a set of value functions, does this produce a heirarchy of meta learners? (will need a way to aggregate actions chosen in different time scales, for example $\pi(s_t) = g(\sum_k f_k(z_t))$)
-
-<!-- - Relationship between tree search and HRL? (divide and conquer for MPC) Recursive subgoal decomposition.  https://arxiv.org/pdf/1706.05825.pdf -->
-
-<!-- __Visualise and understand the loss surface of simple RL problems__ &#9734; &#9734; -->
-
-<!-- ## Continuious options
-
-https://arxiv.org/pdf/1703.00956.pdf -->

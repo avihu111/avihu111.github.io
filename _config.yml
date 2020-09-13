@@ -44,7 +44,7 @@ permalink: /:title/
 # The release of Jekyll Now that you're using
 version: v1.2.0
 
-markdown: kramdown
+markdown:
 kramdown:
   input: GFM
   syntax_highlighter: rouge
@@ -68,6 +68,11 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - vendor/bundle
+  - vendor/
+  # - archive
+  # - images
+
 
 defaults:
   -

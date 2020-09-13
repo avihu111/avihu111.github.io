@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Discounting, risk and uncertainty
+title: Discounting, risk, and uncertainty.
 ---
 
 Why do we discount future rewards? What priors does it imply?
@@ -89,3 +89,7 @@ Properties.
 
 - [Hyperbolic Discounting and Learning Over Multiple Horizons](https://openreview.net/forum?id=rkezdaEtvH)
 - [Discounted Reinforcement Learning Is Not an Optimization Problem](https://arxiv.org/abs/1910.02140)
+
+***
+
+What about a discount greater than 1?

@@ -3,9 +3,9 @@ layout: post
 title: The complexity of exploration
 ---
 
-This setting is inspired by the problems faced in science, especially economics and medicine. There are some experiments that are not feasible, or legal, or would take extraordinary amounts of organisation and energy. For example, a randomised controlled trial of the unconditional benefit would require: more than twenty countries to participate, for some countries to  (and obviously there is no way of running is as a blinded experiment).
+This setting is inspired by the problems faced in science, especially economics and medicine. There are some experiments that are not feasible, or legal, or would take extraordinary amounts of organisation and energy. For example, a randomised controlled trial of the unconditional benefit would require: many countries to spend $$$ on an unconditional benefit, which they may be unwilling to do (and obviously there is no way of running is as a blinded experiment).
 
-At some point we will want to apply statistics to economics and healthcare. And while unsupervised learning is to pattern recognition, supervised learning is to predictive intelligence, reinforcement learning is to actionable intelligence. We will want algorithms that explore and do experiments! But... This has two problems. Safety, which is considered here. Want to build AI with a bias to simple cheap experiments.
+At some point we will want to automate the application of statistics to economics and healthcare. Unsupervised (machine) learning is to pattern recognitio, as supervised (machine) learning is to predictive intelligence, as reinforcement (machine) learning is to actionable intelligence. We will want this automated statistics to be able to find algorithms that explore and do experiments! But... This has two problems. Safety, which is considered here. Want to build AI with a bias to simple cheap experiments.
 
 ## Examples
 
@@ -20,6 +20,8 @@ Ok, this has an interesting property. Multiple ways to learn the same thing. We 
 ***
 
 __Hypothesis:__ Simple, local, exploration strategies will naturally emerge from optimising for novelty (and/or compression?). They are easier to learn and yield a higher rate of return.
+
+The low hanging fruit!
 
 ## Sample complexity of option's effects
 

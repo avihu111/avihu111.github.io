@@ -3,9 +3,10 @@ layout: post
 title: Saddles, splitting and reparameterisation
 ---
 <!-- Core idea is path distillation! -->
-How can we learn complicated, non-convex loss functions? There seems to be two approaches to gradually building the complexity required;
+A heuristic used when learning, is to incrementally build from simple to complex? There seems to be two approaches to gradually building the complexity required;
 - [curriculum learning]() provides loss functions with increasing complexity (while each intermediate loss function is somehow related to your true goal).
 - [boosting]()
+<!-- - [] incremental learning the NNs do!?-->
 
 Another approach/point of view is a type of [transfer learning]() between the simpler learners (/loss function) to the more complex.
 

@@ -9,7 +9,7 @@ Linear algebra and arrays combine to give us a powerful language. Let's explore 
 
 One of the cool things about linear algebra is that linear functions can be written as arrays. This representational duality between operator and operand is rather elegant.
 
-Related to Turing's duality of data and program. Where ...
+<!-- Related to Turing's duality of data and program. Where ... -->
 
 <!-- But are these more that just nice mathematical curiosities? Why is this useful or important? -->
 
@@ -38,7 +38,7 @@ $$
 \end{align*}
 $$
 
-And we can 'do' differentiation vuia matrix multiplying $\frac{d}{dx}a = \mathcal D \cdot a$.
+And we can 'do' differentiation via matrix multiplying $\frac{d}{dx}a = \mathcal D \cdot a$.
 <side>Problem (we need infinite matrices for this to work out...)</side>
 
 
@@ -70,7 +70,7 @@ Awesome.
 
 #### Integral (of polynomials)
 
-What about integrals, they are linear operators. Let's write them in a similar manner??
+What about integrals, they are linear operators. Can we write them in a similar manner?
 
 $$
 \begin{align}
@@ -103,21 +103,21 @@ a &= [0, 5, 3, 0, 1]^T \\
 \begin{bmatrix} 0 \\ 5 \\ 3 \\ 0 \\ 1 \\ 0
 \end{bmatrix} \\
 &= \begin{bmatrix} 0 \\ 0 \\ \frac{5}{2} \\ \frac{3}{3} \\ 0 \\ \frac{1}{5} \end{bmatrix} \\
+&=  \frac{1}{5} x^5 + \frac{3}{3} x^3 + \frac{5}{2} x^2\\
 \int a \; dx &=  \frac{1}{5} x^5 + \frac{3}{3} x^3 + \frac{5}{2} x^2 + c\\
 \end{align}
 $$
 
-<side>Ok. So this doesnt quite with with the added constant, $c$.</side>
+<side>Ok. So this works, up to an added constant, $c$.</side>
 
 ***
 
-Intriguingly, we can relate the integration and differentiation operators via $\mathcal I = \frac{1}{\mathcal D^T}$.  Hmph. Should have $\mathcal I \mathcal D = I$?!? What have I done wrong?
+Intriguingly, we can relate the integration and differentiation operators via $\mathcal I = \frac{1}{\mathcal D^T}$.
 
 ### Bilinear operations
 
-##### The matrix multiplication tensor
-
-##### ?
+> The matrix multiplication tensor
+TODO !!!
 
 ## Algebras
 
@@ -346,5 +346,5 @@ Other
 - What alternatives are there to representing information that rival linear algebra? Other data structures, trees, graphs, !??
 - in some representations, matmul ends up capturing another operation in the original representation. other times, the arguments capture the operations.
 
-<!-- 
+<!--
 - could talk about "Concrete models and empirical evaluations for the categorical compositional distributional model of meaning". -->

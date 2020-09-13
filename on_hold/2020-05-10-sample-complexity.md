@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sample complexity
+title: What is sample complexity?
 ---
 
 How can we analyse sample complexity?
