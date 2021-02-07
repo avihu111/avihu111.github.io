@@ -61,3 +61,8 @@ Good intros to important ideas for others interested in AI
 - Integration of Deep learning + neuro
 - On the necessity of abstraction
 -
+
+Food for thought
+- The hardware lottery
+- THe bitter lesson
+- ???
