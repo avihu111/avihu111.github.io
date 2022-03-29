@@ -5,10 +5,11 @@ title: Active Learning on a Budget
 
 This blogpost provides an intuitive overview of our paper "**Active Learning on a Budget - Opposite Strategies Suit High and Low Budgets"**.
 [Our paper can be viewed here](https://arxiv.org/abs/2202.02794).
+
 This work was done in collaboration with [Guy Hacohen](https://www.cs.huji.ac.il/w~guy.hacohen/) and Prof [Daphna Weinshall](https://www.cs.huji.ac.il/~daphna/)
 
 ## Introduction
-One of the key challenges in supervised deep learning is its reliance on a large number of labeled samples. In many practical setups, the annotation process is very expensive, and is the bottleneck in improving performance. For example, in medical imaging analysis the annotations require experts (a radiologist) annotations, whose time is very costly. **Semi-supervised** and **self-supervised** learning attempt to utilize the unlabeled data to improve the model's generalization.
+One of the key challenges in supervised deep learning is its reliance on a large number of labeled samples. In many practical setups, the annotation process is  expensive, and is the bottleneck in improving performance. For example, in medical imaging analysis the annotations require experts (a radiologist) annotations, whose time is very costly. **Semi-supervised** and **self-supervised** learning attempt to utilize the unlabeled data to improve the model's generalization.
 
 ## Active Learning
 In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples in can send to annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and with to query even more.  Active learning methods are usually consist of two principles:
@@ -25,18 +26,21 @@ There might be several causes to this:
 
 ## TypiClust
 TypiClust (Typical Clustering) is a Low Budget Active Learning, that improves generalization by a large margin.
+It attempts to select typical samples (dense regions in the data distribution) - intuitively, these samples would cover most of the data distribution.
+Typicality is defined as the inverse of mean distance of the samples to it's K nearest neighbors:
+<img src="https://render.githubusercontent.com/render/math?math=\bigg(\frac{1}{K}\sum_{x_i\in \text{K-NN}(x)}||x-x_i||_2\bigg)^{-1}" width=300>
 
-It consists of 3 steps:
-1. **Unsupervised Learning** - Emplpoying some self supervised model to create semantically meaningful features
-2. **Clustering** - Clustering the features to the number of samples we wish to add
-3. **Typical Selection** - selecting the most dense feature from every cluster
+
+TypiClust consists of 3 steps:
+1. **Unsupervised Learning** - Emplpoying some self supervised model to create semantically meaningful features. We trained SimCLR when experimenting on CIFAR and TinyImageNet, and used DINO pretrained features on ImageNet.
+2. **Clustering** - To enforce diversity in the selected samples, we cluster the data to N + B (N is the number of labeled samples, B is the budget size). We then select the B largest clusters that do not contain a labeled image.
+3. **Typical Selection** - From those B clusters, we select the most typical sample.
 
 
 <img src="https://user-images.githubusercontent.com/39214195/160614551-99e874e4-2ffd-4a48-baea-8e4232b5ed2a.png" width="640">
 
-Our sample selection gets clear benefits on a varaity of datasets and in many training frameworks
+TypiClust sample selection shows clear improvements in performance on a varaity of datasets and in many training frameworks:
 <img src="https://user-images.githubusercontent.com/39214195/160615739-31fb1135-6f84-435a-beb6-95ca6d8c028d.png" width="640">
-
 
 
 ## Why it works
