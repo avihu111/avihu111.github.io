@@ -51,7 +51,7 @@ TypiClust sample selection shows clear improvements in performance on a varaity 
 Our method prefers to sample dense parts of the distribution, which is more benefitial when labeled data is sparse.
 We compare the selection of 10 samples on synthetic data of our method versus coreset:
 
-<img src="https://user-images.githubusercontent.com/39214195/160648274-bc5c388e-1fd3-4a0c-87cd-29893cb81b4d.gif" width="640">
+<img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="640">
 
 <img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="640">
 
