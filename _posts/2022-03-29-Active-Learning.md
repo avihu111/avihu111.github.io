@@ -30,6 +30,10 @@ It consists of 3 steps:
 2. **Clustering** - Clustering the features to the number of samples we wish to add
 3. **Typical Selection** - selecting the most dense feature from every cluster
 
-<!-- ![image](https://user-images.githubusercontent.com/39214195/160614551-99e874e4-2ffd-4a48-baea-8e4232b5ed2a.png|width=100) -->
+
 <img src="https://user-images.githubusercontent.com/39214195/160614551-99e874e4-2ffd-4a48-baea-8e4232b5ed2a.png" width="640">
+
+Our sample selection gets clear benefits on a varaity of datasets and in many training frameworks
+<img src="https://user-images.githubusercontent.com/39214195/160615739-31fb1135-6f84-435a-beb6-95ca6d8c028d.png" width="640">
+
 
