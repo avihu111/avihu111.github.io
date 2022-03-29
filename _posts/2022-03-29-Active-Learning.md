@@ -13,8 +13,7 @@ Consider for example, that you started a startup company that uses satellite ima
 
 As you are familiar with machine learning and computer vision tasks, you may wish to train some convolutional neural network to solve this task. This is a supervised learning problem: mapping from the images into the segmentation map. 
 
-
-![image](https://user-images.githubusercontent.com/39214195/160605470-2e38aea4-2e92-4eaf-81e6-73ace98532e2.png)
+![image](https://user-images.githubusercontent.com/39214195/160606321-33e13805-78fc-4b8a-b98c-4c8a9cb09ab7.png)
 
 The satellite images are already collected, However, the segmentation task requires a human expert (perhaps a geologist) to assess, and might be very expensive. Therefore, your budget only allows you to hire a geologist to segment 500 images. You wish to get as much as you can from these segmentations. Specifically, you want to select the most informative samples, that would improve your model's generalization. 
 
