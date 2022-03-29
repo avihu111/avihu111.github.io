@@ -14,7 +14,8 @@ One of the key challenges in supervised deep learning is its reliance on a large
 In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples in can send to annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and with to query even more.  Active learning methods are usually consist of two principles:
 1. **Uncertainty Sampling** - selecting the samples that the model the most unsure over their predictions. Annotating these samples would be most informative to the model. One way to measure uncertainty is by the maximal Softmax response. 
 2. **Diversity** - when selecting a batch of samples, we wish that the samples would not be correlated with each other. One approach is [Coreset](https://arxiv.org/abs/1708.00489), which uses the features in the penultimate of the network, and attempts to select the samples with the farthest features from the labeled samples iteratively. (add graph on 2d GMM dataset??)
-  
+ 
+
 ### Low Budget Active learning
 Notice that the methods discussed above rely on an existing trained model. Therefore, these methods cannot be used for selecting the initial pool of samples. On top of that, when given a low number of samples, these methods usually fail to improve over random selection.
 There might be several causes to this:
@@ -35,5 +36,16 @@ It consists of 3 steps:
 
 Our sample selection gets clear benefits on a varaity of datasets and in many training frameworks
 <img src="https://user-images.githubusercontent.com/39214195/160615739-31fb1135-6f84-435a-beb6-95ca6d8c028d.png" width="640">
+
+
+
+## Why it works
+Our method prefers to sample dense parts of the distribution, which is more benefitial when labeled data is sparse.
+We compare the selection of 10 samples on synthetic data of our method versus coreset:
+
+<img src="https://user-images.githubusercontent.com/39214195/160630409-9517f632-6c92-4aa2-97a9-e97439a5f889.gif" width="400"> <img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="400">
+
+Notice that coreset selects the ourliers in the distribution, while our method selects dense regions, while keeping the selection diverse.
+
 
 
