@@ -1,12 +1,19 @@
 ---
 layout: post
-title: Active Learning on a budget
+title: Active Learning on a Budget
 ---
-This is where we write about our paper
+
+[Our paper can be viewed here](https://arxiv.org/abs/2202.02794).
 
 
-<!-- Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below). -->
+### Background
+#### Active Learning
+Active learning attempts to improve label efficiency
 
-<!-- ![_config.yml]({{ site.baseurl }}/images/config.png) -->
 
-<!-- The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub. -->
+### TypiClust
+
+
+consists of 3 stages: Unsupervised learning, clustering and dense selection.
+
+
