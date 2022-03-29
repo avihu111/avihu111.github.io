@@ -12,7 +12,11 @@ This work was done in collaboration with [Guy Hacohen](https://www.cs.huji.ac.il
 One of the key challenges in supervised deep learning is its reliance on a large number of labeled samples. In many practical setups, the annotation process is  expensive, and is the bottleneck in improving performance. For example, in medical imaging analysis the annotations require experts (a radiologist) annotations, whose time is very costly. **Semi-supervised** and **self-supervised** learning attempt to utilize the unlabeled data to improve the model's generalization.
 
 ## Active Learning
-In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples in can send to annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and with to query even more.  Active learning methods are usually consist of two principles:
+In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples in can send to annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and with to query even more.
+
+<img src="https://user-images.githubusercontent.com/39214195/160649574-177598a1-d493-46f2-8e70-cd20fe9d5342.png" width="640">
+
+Active learning methods are usually consist of two principles:
 1. **Uncertainty Sampling** - selecting the samples that the model the most unsure over their predictions. Annotating these samples would be most informative to the model. One way to measure uncertainty is by the maximal Softmax response. 
 2. **Diversity** - when selecting a batch of samples, we wish that the samples would not be correlated with each other. One approach is [Coreset](https://arxiv.org/abs/1708.00489), which uses the features in the penultimate of the network, and attempts to select the samples with the farthest features from the labeled samples iteratively. (add graph on 2d GMM dataset??)
  
