@@ -14,7 +14,7 @@ One of the key challenges in supervised deep learning is its reliance on a large
 ### Active Learning
 In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples it can send to annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and wish to query even more.
 
-<img src="https://user-images.githubusercontent.com/39214195/160649574-177598a1-d493-46f2-8e70-cd20fe9d5342.png" width="640">
+<img src="https://user-images.githubusercontent.com/39214195/160649574-177598a1-d493-46f2-8e70-cd20fe9d5342.png" width="440">
 
 Active learning methods are usually consist of two principles:
 1. **Uncertainty Sampling** - selecting the samples that the model is the most unsure of their predictions. Annotating these samples would be most informative to the model. One way to measure uncertainty is by the maximal Softmax response. 
@@ -30,7 +30,14 @@ There might be several causes to this:
 ## Our contributions
 ### Phase transition - From low to high budget 
 Our paper shows that indeed selecting "easy" samples is more beneficial in low budgets, and sampling "hard" samples is beneficial when the budget is high. 
-We provide a theoretical framework that assumes that the "error function" (a function of "expected error" vs budget) is exponentially decreasing. Assuming two independent learners with differently paced exponential error functions, we prove that there is a shift in the optimal sampling strategies.   
+We provide a theoretical framework that assumes that the "error function" (a function of "expected error" vs budget) is exponentially decreasing. Assuming two independent learners with differently paced exponential error functions, we prove that there is a shift in the optimal sampling strategies. 
+The expected phenomenon from the theoretical analysis:
+
+<img src="https://user-images.githubusercontent.com/39214195/161326240-bd3e5c38-4548-4655-9ee5-bf5ff3eb6bf4.png" width=440>
+
+The empirical result we see is similar:
+
+<img src="https://user-images.githubusercontent.com/39214195/161326609-a60ff5fc-ca97-4fdb-bd28-5a5468c2499c.png" width=440>
 
 
 ### TypiClust
@@ -46,19 +53,19 @@ TypiClust consists of 3 steps:
 3. **Typical Selection** - From those B clusters, we select the most typical sample.
 
 
-<img src="https://user-images.githubusercontent.com/39214195/160614551-99e874e4-2ffd-4a48-baea-8e4232b5ed2a.png" width="640">
+<img src="https://user-images.githubusercontent.com/39214195/160614551-99e874e4-2ffd-4a48-baea-8e4232b5ed2a.png" width="440">
 
 TypiClust sample selection shows clear improvements in performance on a variety of datasets and in many training frameworks:
-<img src="https://user-images.githubusercontent.com/39214195/160615739-31fb1135-6f84-435a-beb6-95ca6d8c028d.png" width="640">
+<img src="https://user-images.githubusercontent.com/39214195/160615739-31fb1135-6f84-435a-beb6-95ca6d8c028d.png" width="440">
 
 
 ## Why it works
 Our method prefers to sample dense parts of the distribution, which is more beneficial when labeled data is sparse.
 We compare the selection of 10 samples on synthetic data of our method versus coreset:
 
-<img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="640">
+<img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="440">
 
-<img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="640">
+<img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="440">
 
 Notice that coreset selects the outliers in the distribution, while our method selects dense regions, while keeping the selection diverse.
 
