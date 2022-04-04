@@ -35,7 +35,7 @@ The expected phenomenon from the theoretical analysis:
 
 <img src="https://user-images.githubusercontent.com/39214195/161326240-bd3e5c38-4548-4655-9ee5-bf5ff3eb6bf4.png" width=440>
 
-The empirical results we see is similar:
+The empirical results we see give a similar picture:
 
 <img src="https://user-images.githubusercontent.com/39214195/161326609-a60ff5fc-ca97-4fdb-bd28-5a5468c2499c.png" width=440>
 
