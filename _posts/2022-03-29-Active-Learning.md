@@ -61,7 +61,7 @@ TypiClust sample selection shows clear improvements in performance on a variety 
 
 ## Why it works
 Our method prefers to sample dense parts of the distribution, which is more beneficial when labeled data is scarse.
-We compare the selection of 10 examples on synthetic data of our method versus coreset:
+We compare the selection of 10 examples on synthetic data, comparing our method with coreset:
 
 <img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="440">
 
