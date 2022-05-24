@@ -9,7 +9,7 @@ This blogpost provides an intuitive overview of our paper "**Active Learning on 
 This work was done in collaboration with [Guy Hacohen](https://www.cs.huji.ac.il/w~guy.hacohen/) and Prof [Daphna Weinshall](https://www.cs.huji.ac.il/~daphna/)
 
 ## Introduction
-One of the key challenges in supervised deep learning is its reliance on a large number of labeled examples. In many practical setups, the annotation process is  expensive, and becomes the bottleneck in improving performance. For example, in medical imaging analysis the annotations require experts (a radiologist) annotations, whose time is very costly. **Semi-supervised** and **self-supervised** learning attempts to utilize the unlabeled data to improve the model's generalization.
+One of the key challenges in supervised deep learning is its reliance on a large number of labeled examples. In many practical setups, the annotation process is  expensive, and becomes the bottleneck in improving performance. For example, in medical imaging analysis the annotations require an expert (a radiologist), whose time is very costly. **Semi-supervised** and **self-supervised** learning attempts to utilize the unlabeled data to improve the model's generalization.
 
 ### Active Learning
 In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples it can send for annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and wish to query even more.
@@ -25,7 +25,7 @@ Active learning methods usually consist of two principles:
 The methods discussed above rely on an existing trained model and therefore cannot be used for selecting the initial pool of samples. On top of that, when given a low number of samples, these methods usually fail to improve over mere random label selection.
 There might be several causes to this:
 1. Models trained only with few samples are prone to overfit, and tend to have over-confident predictions. Relying on these predictions typically leads to a noisy uncertainty signal.
-2. The field of curriculum learning shows that starting from "easy" samples and gradually increasing the "difficulty" level is preferable. The analogous idea in active learning is selecting "easy" samples when the budget is low, and "hard" samples when the budget is high.
+2. The field of curriculum learning shows that starting from "easy" samples and gradually increasing the "difficulty" level is preferable. The analogous insight in active learning is selecting "easy" samples when the budget is low, and "hard" samples when the budget is high.
 
 ## Our contributions
 ### Phase transition - From low to high budget 
@@ -41,7 +41,7 @@ The empirical results we see give a similar picture:
 
 
 ### TypiClust
-TypiClust (Typical Clustering) is a Low Budget Active Learning method that improves generalization by a large margin.
+TypiClust (Typical Clustering) is a low budget active learning method that improves generalization by a large margin.
 It attempts to select typical samples (dense regions in the data distribution) - intuitively, these samples would cover more of the data distribution, as compared to random samples.
 Typicality is defined as the inverse of the mean distance of an example to its K nearest neighbors:
 <img src="https://render.githubusercontent.com/render/math?math=\bigg(\frac{1}{K}\sum_{x_i\in \text{K-NN}(x)}||x-x_i||_2\bigg)^{-1}" width=300>
@@ -61,11 +61,10 @@ TypiClust sample selection shows clear improvements in performance on a variety 
 
 ## Why it works
 Our method prefers to sample dense parts of the distribution, which is more beneficial when labeled data is scarse.
-We compare the selection of 10 examples on synthetic data, comparing our method with coreset:
+We compare the selection of 10 examples on synthetic data, comparing our method with coreset selections:
 
 <img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="440">
 
 <img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="440">
 
-Notice that coreset selects the outliers in the distribution, while our method selects examples which are located close to the centroids of dense regions, while keeping the selection diverse.
-
+Notice that coreset selects outliers (sparse regions), while our method selects examples from dense regions, while keeping the selection diverse.
