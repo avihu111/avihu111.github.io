@@ -8,7 +8,9 @@ This work was done in collaboration with [Guy Hacohen](https://www.cs.huji.ac.il
 
 
 [Our paper can be found here](https://arxiv.org/abs/2202.02794).
+
 [Our GitHub implementation can be found here](https://github.com/avihu111/TypiClust).
+
 [A Twitter thread can be found here](https://twitter.com/AvihuDkl/status/1529385835694637058).
 
 
