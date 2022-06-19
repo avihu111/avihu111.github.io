@@ -4,12 +4,16 @@ title: Active Learning on a Budget
 ---
 
 This blogpost provides an intuitive overview of our paper "**Active Learning on a Budget - Opposite Strategies Suit High and Low Budgets"**.
-[Our paper can be viewed here](https://arxiv.org/abs/2202.02794).
-
 This work was done in collaboration with [Guy Hacohen](https://www.cs.huji.ac.il/w~guy.hacohen/) and Prof [Daphna Weinshall](https://www.cs.huji.ac.il/~daphna/)
 
+
+[Our paper can be found here](https://arxiv.org/abs/2202.02794).
+[Our GitHub implementation can be found here](https://github.com/avihu111/TypiClust).
+[A Twitter thread can be found here](https://twitter.com/AvihuDkl/status/1529385835694637058).
+
+
 ## Introduction
-One of the key challenges in supervised deep learning is its reliance on a large number of labeled examples. In many practical setups, the annotation process is  expensive, and becomes the bottleneck in improving performance. For example, in medical imaging analysis the annotations require an expert (a radiologist), whose time is very costly. **Semi-supervised** and **self-supervised** learning attempts to utilize the unlabeled data to improve the model's generalization.
+One of the key challenges in supervised deep learning is its reliance on a large number of labeled examples. In many practical setups, the annotation process is  expensive, and becomes the bottleneck in improving performance. For example, in medical imaging analysis the annotations require an expert (a radiologist), whose time is very costly.
 
 ### Active Learning
 In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples it can send for annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and wish to query even more.
