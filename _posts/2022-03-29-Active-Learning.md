@@ -25,7 +25,7 @@ In active learning, **the model selects the samples to be labeled**. In common s
 
 Active learning methods usually follow two principles:
 1. **Uncertainty Sampling** - selecting the samples that the model is most unsure regarding their predictions. Annotating these samples would be most informative to the model. One way to measure uncertainty is by the maximal Softmax response. 
-2. **Diversity** - when selecting a batch of samples, it is beneficial to choose unccorrelated examples (as much as possible). One approach is [Coreset](https://arxiv.org/abs/1708.00489): it uses the features in the penultimate layer of a deep network, and attempts to select the samples that lie as far as possible from the already labeled samples; this is repeated iteratively.
+2. **Diversity** - when selecting a batch of samples, it is beneficial to choose uncorrelated examples (as much as possible). One approach is [Coreset](https://arxiv.org/abs/1708.00489): it uses the features in the penultimate layer of a deep network, and attempts to select the samples that lie as far as possible from the already labeled samples; this is repeated iteratively.
  
 
 ### "Cold Start" in Low Budgets
@@ -47,7 +47,7 @@ Let's analyze what we see here:
 - We plot different strategies as a function of the budget size.
 - We look at the accuracy difference from random selection. Every Active learning attempts to improve over random selection. So a beneficial active learning strategy should be above random selection. 
 - In low budgets, sampling the common regions improves random selection, and uncertainty sampling is detrimental.
-- In high budgets, we see the oposite behaviour: uncertainty sampling works, while the oposite strategy fails.
+- In high budgets, we see the opposite behaviour: uncertainty sampling works, while the opposite strategy fails.
 
 The empirical results we see give a similar picture. We plot the performance of Margin (an uncertainty sampling method) versus TypiClust (our method, which we describe below).
 
@@ -77,7 +77,7 @@ TypiClust sample selection shows clear improvements in performance on a variety 
 Notice that the improvements are more significant when using semi supervised learning. Specifically, when selecting 10 samples from CIFAR-10, TypiClust achieves a significant improvement of 39.4% in test accuracy over random selection.
 
 ### Visualization
-TypiClust samples dense parts of the distribution, which is more beneficial when labeled data is scarse.
+TypiClust samples dense parts of the distribution, which is more beneficial when labeled data is scarce.
 We compare the selection of 10 examples on synthetic data, comparing our method with coreset selections:
 
 <img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="440"> <img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="440">
@@ -87,7 +87,7 @@ Notice that coreset selects outliers (sparse regions), while our method selects 
 
 ## Theoretical Analysis
 
-We now eleborate on our theoretical model. We analyse a mixture of two general learners, where one learns a distinct part of the data distribution.
+We now elaborate on our theoretical model. We analyse a mixture of two general learners, where one learns a distinct part of the data distribution.
 Specifically, we split the data distribution into two distinct regions: $R_1$ and $R_2$, where each region is learned by its own learner. 
 Denote $p=Prob(R_1)$, and we can define the data distribution $D$ as a mixture of the two distributions $D_1,D_2$. 
 
@@ -97,7 +97,7 @@ $$\forall m : E_1(m) < E_2(m) $$
 
 We describe this by a pacing parameter $\alpha < 1$ where:
 $$E_2(m) = E_1(\alpha m)=E(\alpha m) $$
-Intuatively, if $\alpha=0.5$, then if we have 1000 samples from $R_2$, we should expect the generalization error of 500 samples from $R_1$. 
+Intuitively, if $\alpha=0.5$, then if we have 1000 samples from $R_2$, we should expect the generalization error of 500 samples from $R_1$. 
 
 What does this have to do with active learning? Well, we can now view active learning as **biased sampling**.
 In active learning, we replace random selection with a clever sampling strategy, hoping to improve generalization. 
