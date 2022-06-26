@@ -21,7 +21,7 @@ One of the key challenges in supervised deep learning is its reliance on a large
 ### Active Learning
 In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples it can send for annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and wish to query even more.
 
-<img src="https://user-images.githubusercontent.com/39214195/160649574-177598a1-d493-46f2-8e70-cd20fe9d5342.png" width="540">
+<img src="https://user-images.githubusercontent.com/39214195/175805064-6c8a9bfa-6ad6-4976-96c2-7cf407e90adf.png" width="540">
 
 Active learning methods usually follow two principles:
 1. **Uncertainty Sampling** - selecting the samples that the model is most unsure regarding their predictions. Annotating these samples would be most informative to the model. One way to measure uncertainty is by the maximal Softmax response. 
@@ -37,6 +37,10 @@ There might be several causes to this:
 ## Phase transition - From low to high budget 
 We provide an explanation for the cold start phenomenon and suggest a novel active learning method, suitable for low budgets.
 Our paper shows that selecting easy/common/representative samples is more beneficial in low budgets, and selecting hard/unrepresentative/uncertain samples is beneficial when the budget is high. 
+
+<img src="https://user-images.githubusercontent.com/39214195/175804983-dd821815-1b9b-4b2f-ac5e-2d42114cd42f.png" width=640>
+
+
 
 We provide a theoretical model for active learning (which we will get into later on). In this model, we prove that there is a shift in the optimal sampling strategies. 
 The theoretical analysis predicts the following behaviour:
