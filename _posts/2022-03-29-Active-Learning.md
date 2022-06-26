@@ -3,7 +3,7 @@ layout: post
 title: Active Learning on a Budget
 ---
 
-This blogpost provides an intuitive overview of our paper "**Active Learning on a Budget - Opposite Strategies Suit High and Low Budgets"**.
+This blogpost provides an overview of our paper "**Active Learning on a Budget - Opposite Strategies Suit High and Low Budgets"**.
 
 
 This work was done in collaboration with [Guy Hacohen](https://www.cs.huji.ac.il/w~guy.hacohen/) and Prof [Daphna Weinshall](https://www.cs.huji.ac.il/~daphna/).
@@ -19,7 +19,7 @@ This work was done in collaboration with [Guy Hacohen](https://www.cs.huji.ac.il
 One of the key challenges in supervised deep learning is its reliance on a large number of labeled examples. In many practical setups, the annotation process is  expensive, and becomes the bottleneck in improving performance. For example, in medical imaging analysis the annotations require an expert (a radiologist), whose time is very costly.
 
 ### Active Learning
-In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples it can send for annotation. Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and wish to query even more.
+In active learning, **the model selects the samples to be labeled**. In common setups, the model gets a **budget**, which is the number of samples it can send for annotation. 
 
 <img src="https://user-images.githubusercontent.com/39214195/175805064-6c8a9bfa-6ad6-4976-96c2-7cf407e90adf.png" width="540">
 
@@ -29,23 +29,24 @@ Active learning methods usually follow two principles:
  
 
 ### "Cold Start" in Low Budgets
-The principles discussed above rely on an existing trained model and therefore cannot be used for selecting the initial pool of samples. On top of that, **when given a low number of samples, these methods usually fail to improve over mere random label selection**.
+Classical works in active learning focus on the high budget settings, which is the case when you have already many labeled samples, and wish to query even more.
+However, **when given a low number of samples, these methods usually fail to improve over the simple random label selection**.
 There might be several causes to this:
 1. Models trained only with few samples are prone to overfit, and tend to have over-confident predictions. Relying on these predictions typically leads to a noisy uncertainty signal.
 2. The field of curriculum learning shows that starting from "easy" samples and gradually increasing the "difficulty" level is preferable. The analogous insight in active learning is selecting "easy" samples when the budget is low, and "hard" samples when the budget is high.
 
 ## Phase transition - From low to high budget 
-We provide an explanation for the cold start phenomenon and suggest a novel active learning method, suitable for low budgets.
-Our paper shows that selecting easy/common/representative samples is more beneficial in low budgets, and selecting hard/unrepresentative/uncertain samples is beneficial when the budget is high. 
+Our paper provides an explanation for the cold start phenomenon and suggests a novel active learning method, suitable for low budgets.
+
+In high budgets, we already knew that sampling uncertain (or ambivalent) was a successful active learning strategy - this is what uncertainty sampling is all about. Our paper shows that in low budgets, the **oposite** strategy is actually much better. In low budgets, is it preferable to sample the most representative and least ambivalent samples. In other words (as the paper name suggests), **oposite strategies suit high and low budgets**. 
+The following figure summarizes this rather intuitive finding:
 
 <img src="https://user-images.githubusercontent.com/39214195/175804983-dd821815-1b9b-4b2f-ac5e-2d42114cd42f.png" width=640>
 
-
-
-We provide a theoretical model for active learning (which we will get into later on). In this model, we prove that there is a shift in the optimal sampling strategies. 
+We provide a theoretical model for active learning (which we will get into the details later on). In this model, we prove that as the budget size increases, the optimal sampling strategy changes. 
 The theoretical analysis predicts the following behaviour:
 
-<img src="https://user-images.githubusercontent.com/39214195/161326240-bd3e5c38-4548-4655-9ee5-bf5ff3eb6bf4.png" width=440>
+<img src="https://user-images.githubusercontent.com/39214195/175806623-c69b6a8a-d779-47fc-8272-9c4cebf864da.png" width=440>
 
 Let's analyze what we see here:
 - We plot different strategies as a function of the budget size.
@@ -53,9 +54,9 @@ Let's analyze what we see here:
 - In low budgets, sampling the common regions improves random selection, and uncertainty sampling is detrimental.
 - In high budgets, we see the opposite behaviour: uncertainty sampling works, while the opposite strategy fails.
 
-The empirical results we see give a similar picture. We plot the performance of Margin (an uncertainty sampling method) versus TypiClust (our method, which we describe below).
+The empirical results we see give a similar picture. We plot an uncertainty sampling method (Margin) versus a Typical samples selection method (TypiClust) and plot the accuracy difference from random selection. We indeed see a change in the optimal sampling strategy as the budget size increases. 
 
-<img src="https://user-images.githubusercontent.com/39214195/161326609-a60ff5fc-ca97-4fdb-bd28-5a5468c2499c.png" width=440>
+<img src="https://user-images.githubusercontent.com/39214195/175806635-3dca5ac7-7d19-4b3e-8eb0-fe5b69427cfe.png" width=440>
 
 
 ## TypiClust
