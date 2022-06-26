@@ -84,7 +84,7 @@ Notice that the improvements are more significant when using semi supervised lea
 TypiClust samples dense parts of the distribution, which is more beneficial when labeled data is scarce.
 We compare the selection of 10 examples on synthetic data, comparing our method with coreset selections:
 
-<img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="440"> <img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="440">
+<img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="340"> <img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="340">
 
 Notice that coreset selects outliers (sparse regions), while our method selects examples from dense regions, while keeping the selection diverse.
 
