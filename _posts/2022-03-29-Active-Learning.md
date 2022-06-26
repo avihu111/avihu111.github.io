@@ -96,7 +96,7 @@ We now elaborate on our theoretical model. We analyse a mixture of two general l
 Specifically, we split the data distribution into two distinct regions: $R_1$ and $R_2$, where each region is learned by its own learner. 
 Denote $p=Prob(R_1)$, and we can define the data distribution $D$ as a mixture of the two distributions $D_1,D_2$. 
 
-We now define the error score function as follows: for every $m$, the error score returns the expected generalization error of a model trained on m randomly selected samples. 
+We now define the error score function as follows: for every $m$, the error score returns the expected generalization error of a model trained on $m$ randomly selected samples. 
 Now, assume that $R_1$ is learned faster than $R_2$. This means that its error score decreases faster: 
 
 $$\forall m : E_1(m) < E_2(m) $$
