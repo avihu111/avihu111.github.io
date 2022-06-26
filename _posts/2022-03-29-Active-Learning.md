@@ -80,8 +80,45 @@ Notice that the improvements are more significant when using semi supervised lea
 TypiClust samples dense parts of the distribution, which is more beneficial when labeled data is scarse.
 We compare the selection of 10 examples on synthetic data, comparing our method with coreset selections:
 
-<img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="440">
-
-<img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="440">
+<img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="440"> <img src="https://user-images.githubusercontent.com/39214195/160630431-930a52df-69e6-4219-9183-9fc8aeac84b9.gif" width="440">
 
 Notice that coreset selects outliers (sparse regions), while our method selects examples from dense regions, while keeping the selection diverse.
+
+
+## Theoretical Analysis
+
+We now eleborate on our theoretical model. We analyse a mixture of two general learners, where one learns a distinct part of the data distribution.
+Specifically, we split the data distribution into two distinct regions: $R_1$ and $R_2$, where each region is learned by its own learner. 
+Denote $p=Prob(R_1)$, and we can define the data distribution $D$ as a mixture of the two distributions $D_1,D_2$. 
+
+We now define the error score function as follows: for every $m$, the error score returns the expected generalization error of a model trained on m randomly selected samples. 
+Now, assume that $R_1$ is learned faster than $R_2$. This means that its error score decreases faster: 
+$$\forall m : E_1(m) < E_2(m) $$
+
+We describe this by a pacing parameter $\alpha < 1$ where:
+$$E_2(m) = E_1(\alpha m)=E(\alpha m) $$
+Intuatively, if $\alpha=0.5$, then if we have 1000 samples from $R_2$, we should expect the generalization error of 500 samples from $R_1$. 
+
+What does this have to do with active learning? Well, we can now view active learning as **biased sampling**.
+In active learning, we replace random selection with a clever sampling strategy, hoping to improve generalization. 
+In this model, we can either oversample $R_1$ or oversample $R_2$. 
+If we sample randomly, the expected error is:
+$$ Er_{total}(m) = pE(pm)+(1-p)E(\alpha (1-p)m) $$
+
+We know that $R_1$ is learned faster than $R_2$ (it's error decreases faster). So, which region should we oversample?
+Oversampling can be viewed in the following way:
+$$m_1=pm+\Delta$$
+$$m_2=(1-p)m-\Delta$$
+- If $\Delta>0$ we oversample $R_1$. 
+- If $\Delta<0$ we oversample $R_2$. 
+- If $\Delta=0$ we simply use random selection. 
+
+We then prove the following theorems:
+### Theorem 1
+The optimal strategy can be determined by a threshold test:
+$$\frac{E'(pm)}{E'(\alpha (1-p)m)} < \frac{\alpha (1-p)}{p} \Longrightarrow \text{Oversample } R_1$$
+So, assuming we know the error score and its derivative, we can decide what is the optimal thing to do. 
+
+
+### Theorem 2
+If $E(m)$ is smooth, monotone and bounded by an exponential, then it presents the phase transition (it is undulating). 
