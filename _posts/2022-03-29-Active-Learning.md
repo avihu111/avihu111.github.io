@@ -38,7 +38,7 @@ There might be several causes to this:
 ## Phase transition - From low to high budget 
 Our paper provides an explanation for the cold start phenomenon and suggests a novel active learning method, suitable for low budgets.
 
-In high budgets, we already knew that sampling uncertain (or ambivalent) was a successful active learning strategy - this is what uncertainty sampling is all about. Our paper shows that in low budgets, the **oposite** strategy is actually much better. In low budgets, is it preferable to sample the most representative and least ambivalent samples. In other words (as the paper name suggests), **oposite strategies suit high and low budgets**. 
+In high budgets, we already knew that sampling uncertain (or ambivalent) was a successful active learning strategy - this is what uncertainty sampling is all about. Our paper shows that in low budgets, the **opposite** strategy is actually much better. In low budgets, is it preferable to sample the most representative and least ambivalent samples. In other words (as the paper name suggests), **opposite strategies suit high and low budgets**. 
 The following figure summarizes this rather intuitive finding:
 
 <img src="https://user-images.githubusercontent.com/39214195/175804983-dd821815-1b9b-4b2f-ac5e-2d42114cd42f.png" width=640>
