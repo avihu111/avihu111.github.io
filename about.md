@@ -13,6 +13,11 @@ permalink: /about/
 - I did my BSc in Computational Biology (gradueted Magna Cum Laude).
 - I worked as an algorithm developer in Mobileye, focusing on Semantic Segmentation.
 
+### Publications
+- [Active Learning on a Budget: Opposite Strategies Suit High and Low Budgets](https://arxiv.org/abs/2202.02794) - Guy Hacohen, **Avihu Dekel** (Equal contribution), Daphna Weinshall (Accepted to ICML2022)
+- [Active Learning Through a Covering Lens](https://arxiv.org/abs/2205.11320) - Ofer Yehuda, **Avihu Dekel**, Guy Hacohen, Daphna Weinshall
+
+
 
 ### Contact me
 
