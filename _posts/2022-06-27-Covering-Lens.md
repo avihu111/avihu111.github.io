@@ -24,10 +24,13 @@ $$\underset{L\subseteq X,\left|L\right|=b}{\text{argmax}}P\left(\bigcup_{x\in L}
 
 Clearly, the larger the $\delta$, we can cover a larger probability mass - but that can make the problem trivial. 
 To solve this, we define the purity of a $\delta$ as the ratio of point that have pure $\delta$ balls - that their $\delta$ ball consists of only one label.
+
 $$\pi(\delta)=P\left(\{ x:B_{\delta}\left(x\right)\text{ is pure}\} \right)$$
 
 We show that when using the 1-Nearest-Neighbor algorithm, we can bound the generalization error as follows:
+
 $$L_{D}\left(\hat{f}\right)\le\left(1-P\left(x\in C\right)\right)+\left(1-\pi\left(\delta\right)\right) $$
+
 This introduces a tradeoff: as $\delta$ increases, the coverage increases, but the purity decreases.
 
 As we don't have the true probability distribution, we can approximate this by using the empirical distribution. 
@@ -37,12 +40,12 @@ Hence, our problem can be reduced into a MaxCoverage problem - attempting to max
 ## Connections with Coreset
 Coreset enforces complete coverage, while minimizing the ball radius (hence the purity).
 However, MaxCoverage enforces ball radius, and attempts to maximize coverage. 
-<img src="https://user-images.githubusercontent.com/39214195/175887920-dec4cd9a-547b-4ea5-a312-f21066ba82e6.png" width="540">
+<img src="https://user-images.githubusercontent.com/39214195/175887920-dec4cd9a-547b-4ea5-a312-f21066ba82e6.png" width="640">
 
 
 ## Results
 In datasets where clustering algorithms struggle (e.g CIFAR-100 and Tiny-ImageNet), this approach shows significant improvements over TypiClust.
 
-<img src="https://user-images.githubusercontent.com/39214195/175888064-fae0b2de-cd4e-46ef-b2eb-a9352f21602e.png" width="540">
+<img src="https://user-images.githubusercontent.com/39214195/175888064-fae0b2de-cd4e-46ef-b2eb-a9352f21602e.png" width="640">
 
 
