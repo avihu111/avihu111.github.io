@@ -7,6 +7,7 @@ permalink: /about/
 - I'm a MSc Student at [Daphna Weinshall Lab](https://www.cs.huji.ac.il/~daphna/).
 - My research interests include Active learning, Semi-Supervised learning, Anomaly detection, Unsupervised Learning and many other fields.
 - I'm a TA on Introduction to Machine Learning (67577).
+- I'm currently a research intern at IBM Research, working on multimodal learning on clinical data.
 
 
 ### More Information
@@ -15,8 +16,7 @@ permalink: /about/
 
 ### Publications
 - [Active Learning on a Budget: Opposite Strategies Suit High and Low Budgets](https://arxiv.org/abs/2202.02794) - Guy Hacohen, **Avihu Dekel** (Equal contribution), Daphna Weinshall (Accepted to ICML2022)
-- [Active Learning Through a Covering Lens](https://arxiv.org/abs/2205.11320) - Ofer Yehuda, **Avihu Dekel**, Guy Hacohen, Daphna Weinshall
-
+- [Active Learning Through a Covering Lens](https://arxiv.org/abs/2205.11320) - Ofer Yehuda, **Avihu Dekel**, Guy Hacohen, Daphna Weinshall (Accepted to NeurIPS2022)
 
 
 ### Contact me
