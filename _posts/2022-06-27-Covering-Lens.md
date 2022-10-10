@@ -40,11 +40,12 @@ MaxCoverage is a known NP-Hard problem, which has a greedy algorithm that achiev
 ## Connections with Coreset
 Coreset attempts to minimize the farthest distance from a sample labeled set to a sample from the unlabeled set.
 This objective is equivalent to enforce complete coverage, while minimizing the ball radius. 
-<img src="https://user-images.githubusercontent.com/39214195/194885805-53863068-36ba-44f6-8b48-d8a32ef1d052.png" width="540">
+
+<img src="https://user-images.githubusercontent.com/39214195/194896060-a7573c2f-7652-4fd0-88fe-1d5165adc1df.gif" width="540">
 
 In contrast, ProbCover enforces ball radius, and attempts to maximize coverage. 
 
-<img src="https://user-images.githubusercontent.com/39214195/194886947-cb459de9-3ef5-4597-b9ba-c53b4fd89885.png" width="540">
+<img src="https://user-images.githubusercontent.com/39214195/194896086-ab57b4f2-f22d-4392-8620-22e50b5508c6.gif" width="540">
 
 Notice that Coreset selects outliers of the data distribution, while ProbCover selects - selected points are colored by their density (red is high density, while yellow is low density). 
 
