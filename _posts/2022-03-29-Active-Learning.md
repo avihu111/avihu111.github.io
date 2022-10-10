@@ -3,7 +3,7 @@ layout: post
 title: Active Learning on a Budget
 ---
 
-This blogpost provides an overview of our paper "**Active Learning on a Budget - Opposite Strategies Suit High and Low Budgets"**.
+This blogpost provides an overview of our ICML 2022 paper "**Active Learning on a Budget - Opposite Strategies Suit High and Low Budgets"**.
 
 
 This work was done in collaboration with [Guy Hacohen](https://www.cs.huji.ac.il/w~guy.hacohen/) and Prof [Daphna Weinshall](https://www.cs.huji.ac.il/~daphna/).
