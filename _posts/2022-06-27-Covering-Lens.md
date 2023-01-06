@@ -2,11 +2,9 @@
 layout: post
 title: Active Learning Through a Covering Lens
 ---
+<img src="https://user-images.githubusercontent.com/39214195/194896086-ab57b4f2-f22d-4392-8620-22e50b5508c6.gif" width="480">
 
 This blogpost discusses our paper NeurIPS 2022 paper: "**Active Learning Through a Covering Lens"**.
-<img src="https://user-images.githubusercontent.com/39214195/194896086-ab57b4f2-f22d-4392-8620-22e50b5508c6.gif" width="240">
-
-
 This work was done in collaboration Ofer Yehuda, [Guy Hacohen](https://www.cs.huji.ac.il/w~guy.hacohen/) and Prof [Daphna Weinshall](https://www.cs.huji.ac.il/~daphna/).
 
 [The paper can be viewed using this link](https://arxiv.org/abs/2205.11320).
