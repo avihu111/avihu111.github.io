@@ -3,6 +3,8 @@ layout: post
 title: Active Learning on a Budget
 ---
 
+<img src="https://user-images.githubusercontent.com/39214195/160669776-ccc8e7a8-0df3-4c7a-9a75-5df01a051d1f.gif" width="480">
+
 This blogpost provides an overview of our ICML 2022 paper "**Active Learning on a Budget - Opposite Strategies Suit High and Low Budgets"**.
 
 
