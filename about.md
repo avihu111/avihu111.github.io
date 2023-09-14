@@ -4,15 +4,16 @@ title: About
 permalink: /about/
 ---
 
-- I'm a Deep Learning researcher, experienced in computer vision and clinical/biological data.
+- I'm a Deep Learning researcher, working on Text-to-Speech at IBM Research.
+- I'm also experienced in computer vision and clinical/biological data.
 - I'm a M.Sc. graduate in Computer Science from the Hebrew University of Jerusalem.
-- Currently, I'm a Research Intern at IBM AI for Healthcare, training Transformers on multi-modal health records dataset.
 
 ### More Information
 - I graduated B.Sc. in Computational Biology (gradueted Magna Cum Laude).
 - I worked as an Algorithm Developer in Mobileye, focusing on Semantic Segmentation.
 - During my M.Sc., I had the pleasure of working in [Daphna Weinshall's Lab](https://www.cs.huji.ac.il/~daphna/).
 - My research focused on Low Budget Active Learning, as well as Semi-Supervised learning, Anomaly detection, Unsupervised Learning and various related fields.
+- I was also a Research Intern at IBM AI for Healthcare, training Transformers on multi-modal health records dataset.
 
 
 ### Publications
