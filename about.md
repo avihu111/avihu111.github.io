@@ -19,7 +19,7 @@ permalink: /about/
 ### Publications
 - [Active Learning on a Budget: Opposite Strategies Suit High and Low Budgets](https://arxiv.org/abs/2202.02794) - Guy Hacohen, **Avihu Dekel** (Equal contribution), Daphna Weinshall (Accepted to ICML2022)
 - [Active Learning Through a Covering Lens](https://arxiv.org/abs/2205.11320) - Ofer Yehuda, **Avihu Dekel**, Guy Hacohen, Daphna Weinshall (Accepted to NeurIPS2022)
-
+- [Speak While You Think: Streaming Speech Synthesis During Text Generation](https://arxiv.org/abs/2309.11210) - **Avihu Dekel**, Slava Shechtman, Raul Fernandez, David Haws, Zvi Kons, Ron Hoory
 
 ### Contact me
 
