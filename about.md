@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-- I'm a Deep Learning researcher, working on Text-to-Speech at IBM Research.
+- I'm a Deep Learning researcher, working on deep speech processing at IBM Research.
 - I'm also experienced in computer vision and clinical/biological data.
 - I'm a M.Sc. graduate in Computer Science from the Hebrew University of Jerusalem.
 
@@ -19,8 +19,14 @@ permalink: /about/
 ### Publications
 - [Active Learning on a Budget: Opposite Strategies Suit High and Low Budgets](https://arxiv.org/abs/2202.02794) - Guy Hacohen, **Avihu Dekel** (Equal contribution), Daphna Weinshall (Accepted to ICML2022)
 - [Active Learning Through a Covering Lens](https://arxiv.org/abs/2205.11320) - Ofer Yehuda, **Avihu Dekel**, Guy Hacohen, Daphna Weinshall (Accepted to NeurIPS2022)
-- [Speak While You Think: Streaming Speech Synthesis During Text Generation](https://arxiv.org/abs/2309.11210) - **Avihu Dekel**, Slava Shechtman, Raul Fernandez, David Haws, Zvi Kons, Ron Hoory (Submitted to ICASSP2024)
+- [Speak While You Think: Streaming Speech Synthesis During Text Generation](https://arxiv.org/abs/2309.11210) - **Avihu Dekel**, Slava Shechtman, Raul Fernandez, David Haws, Zvi Kons, Ron Hoory (Accepted to ICASSP2024)
+- [Exploring the Benefits of Tokenization of Discrete Acoustic Units](https://arxiv.org/abs/2406.05547) - **Avihu Dekel**, Raul Fernandez (Accepted to Interspeech 2024)
+- [Low Bitrate High-Quality RVQGAN-based Discrete Speech Tokenizer](https://arxiv.org/abs/2410.08325) - Slava Shechtman, **Avihu Dekel** (Accepted to Interspeech 2024)
+- [Continuous Speech Synthesis using per-token Latent Diffusion](https://arxiv.org/abs/2410.16048) - Arnon Turetzky, Nimrod Shabtay, Slava Shechtman, Hagai Aronowitz, David Haws, Ron Hoory, **Avihu Dekel** (Core Contributor)
+
+### Talks
+- [Low Budget Active Learning: Israel Computer Vision Day 2022, Tel Aviv University](https://www.youtube.com/watch?v=GcKF8JzpA54)
+
 
 ### Contact me
-
 [avihu112@gmail.com](mailto:avihu112@gmail.com)
